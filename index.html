@@ -1,34 +1,142 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>SheCodes Plus</title>
+    <title>Parcel Sandbox</title>
     <meta charset="UTF-8" />
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <link href="src/styles.css" rel="stylesheet" type="text/css" />
+    <link href="src/styles.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
   </head>
 
   <body>
-    <img src="images/logo.png" alt="She Codes Plus Logo" class="logo" />
-    <h1>JavaScript Open Weather API</h1>
+    <h1> Weather </h1>
+    <h2></h2>
+    <form id="search-form">
+      <input
+      type = "text"
+      placeholder="Search for City"
+      autocomplete="off"
+      autofocus="on"
+      id="search-text-input"
+      />
 
-    <h3>JS Challenge 1</h3>
-    <p>Import Axios</p>
+      <input type="submit" value="Search" />
+    </form>
 
-    <h3>JS Challenge 2</h3>
-    <p>Get your API key and save in a variable called apiKey</p>
+   <p class = "emojicitytemp">
+        <div class="row">
+        <div class="col-4">
+            <div class="card" style="width: 25rem;">
+                <div class="card-body">
+                  <p class="card-text">Emoji</p>
+                </div>
+              </div>
+          </div>
+          <div class="col-4">
+              <div class="card" style="width: 25rem;">
+                  <div class="card-body">
+                    <p class="card-text">City</p>
+                  </div>
+                </div>
+          </div>
+          <div class="col-4">
+              
+                  <div class="card" style="width: 25rem;">
+                      <div class="card-body">
+                        <p class="card-text">Temperature</p>
+                      </div>
+                    </div>
+              
+          </div>
+        </div>
+        </p>
 
-    <h3>JS Challenge 3</h3>
-    <p>Get the API response for the weather in Sydney, using metrics unit</p>
+        <h3 class = "date"></h3>
+          
+<div id="week">
+  <ul id ="weekday">
+  <li> Monday </li>
+  <li>Tuesday</li>
+  <li>Wednesday</li>
+  <li>Thursday</li>
+  <li>Friday</li>
+  <li>Saturday</li>
+  <li>Sunday</li>
+</ul>
+</div>
 
-    <h3>JS Challenge 4</h3>
-    <p>Log the current temperature in Sydney</p>
+          <p class ="dailytemp">
+              <div class="row">
+                  <div class="col-1">
+                      <div class="card" style="width: 10rem;">
+                          <div class="card-body">
+                            <p class="card-text">degrees</p>
+                          </div>
+                      </div>
+                  </div>
+              
+          
+                  <div class="col-1">
+                      <div class="card" style="width: 10rem;">
+                          <div class="card-body">
+                            <p class="card-text">degrees</p>
+                          </div>
+                      </div>
+                  </div>
+              
+                  <div class="col-1">
+                      <div class="card" style="width: 10rem;">
+                          <div class="card-body">
+                            <p class="card-text">degrees</p>
+                          </div>
+                      </div>
+                  </div>
+              
+                  <div class="col-1">
+                      <div class="card" style="width: 10rem;">
+                          <div class="card-body">
+                            <p class="card-text">degrees</p>
+                          </div>
+                      </div>
+                  </div>
+              
+                  <div class="col-1">
+                      <div class="card" style="width: 10rem;">
+                          <div class="card-body">
+                            <p class="card-text">degrees</p>
+                          </div>
+                      </div>
+                  </div>
+              
+                  <div class="col-1">
+                      <div class="card" style="width: 10rem;">
+                          <div class="card-body">
+                            <p class="card-text">degrees</p>
+                          </div>
+                      </div>
+                  </div>
+              
+                  <div class="col-1">
+                      <div class="card" style="width: 10rem;">
+                          <div class="card-body">
+                            <p class="card-text">degrees</p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+            </p>
+            
+<button class = "moreinfo">
+  More Info
+</button>
 
-    <h3>JS Challenge 5</h3>
-    <p>
-      Replace the h1 of this page with the weather in Sydney: i.e: It is 19
-      degrees in Sydney
-    </p>
+
 
     <script src="src/index.js"></script>
+    <form.addEventListener("submit", search)>
   </body>
 </html>

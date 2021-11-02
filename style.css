@@ -1,23 +1,23 @@
-body {
-    font-family: sans-serif;
-    padding: 0 20px;
-  }
-  
-  h1 {
+.search .emojicitytemp .date .weekday .dailytemp .moreinfo {
+    display: inline;
     text-align: center;
-    font-weight: 900;
-    margin: 0;
-    font-size: 34px;
-    line-height: 48px;
-  }
-  
-  h1 h2,
-  h3 {
-    color: #231d3c;
-  }
-  
-  .logo {
-    display: block;
     margin: 30px auto;
-    width: 150px;
   }
+  
+  h3 {
+    text-align: center;
+    display: inline;
+  }
+  
+  #weekday li {
+    display: inline;
+  }
+  
+  .moreinfo {
+    margin: 0 auto;
+    display: block;
+    border: black;
+    color: rgb(23, 23, 212);
+    background: rgb(250, 247, 247);
+  }
+  
