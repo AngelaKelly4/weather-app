@@ -1,24 +1,7 @@
-//let weather = {
-//paris: {temp: 19.7,humidity: 80},
-//tokyo: {temp: 17.3,humidity: 50},
-//lisbon: {temp: 30.2,humidity: 20},
-//"san francisco": {temp: 20.9,humidity: 100},
-//moscow: {temp: -5,humidity: 20}};
-
-//let city = prompt("Enter a city?");
-//if (weather[city] !== undefined) {
-// let temperature = weather[city].temp;
-//let humidity = weather[city].humidity;
-//let celsiusTemperature = Math.round(temperature);
-//let fahrenheitTemperature = Math.round((temperature * 9) / 5 + 32);
-
-//alert(`It is currently ${celsiusTemperature}°C (${fahrenheitTemperature}°F) in ${city} with a humidity of ${humidity}%` );} else {
-//alert(`Sorry we don't know the weather for this city, try going to https://www.google.com/search?q=weather+${city}`);}
-
 //DATE AND TIME
 let now = new Date();
 
-let h3 = document.querySelector("h3");
+let h4 = document.querySelector("h4");
 
 let date = now.getDate();
 let hours = now.getHours();
@@ -44,23 +27,54 @@ let months = [
 ];
 let month = months[now.getMonth()];
 
-h3.innerHTML = `${day} ${month} ${date}, ${year}, ${hours}:${minutes}`;
+h4.innerHTML = `${day} ${month} ${date}, ${year}, ${hours}:${minutes}`;
 
 //SEARCH ENGINE
 //DISPLAY CITY NAME
+//function search(event) {
+//event.preventDefault();
+//let searchInput = document.querySelector("#search-text-input");
+//let h2 = document.querySelector("h2");
+//if (searchInput.value) {
+//h2.innerHTML = `${searchInput.value}, 20`;} else {h2.innerHTML = null;alert("Please enter city");}}
+//let form = document.querySelector("#search-form");
+//form.addEventListener("submit", search);
 
-function search(event) {
-  event.preventDefault();
-  let searchInput = document.querySelector("#search-text-input");
-
+//search city - show name and current temp
+function showTemperature(response) {
+  let temperature = Math.round(response.data.main.temp);
+  console.log(temperature);
+  console.log(response);
+  let city = response.data.name;
+  let message = `It is ${temperature} degrees in ${city}`;
   let h2 = document.querySelector("h2");
-  if (searchInput.value) {
-    h2.innerHTML = `City: ${searchInput.value}`;
-  } else {
-    h2.innerHTML = null;
-    alert("Please enter city");
-  }
+  h2.innerHTML = message;
 }
 
-let form = document.querySelector("#search-form");
-form.addEventListener("submit", search);
+let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
+let units = "metric";
+let city = "Berlin";
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
+
+axios.get(apiUrl).then(showTemperature);
+
+//current position
+function showWeather(response) {
+  let h3 = document.querySelector("h3");
+  let temperature = Math.round(response.data.main.temp);
+  h3.innerHTML = `It is currently ${temperature}° in ${response.data.name}`;
+}
+
+function retrievePosition(position) {
+  let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
+  let lat = position.coords.latitude;
+  let lon = position.coords.longitude;
+  let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
+  axios.get(url).then(showWeather);
+}
+
+function getCurrentLocation() {
+  navigator.geolocation.getCurrentLocation(retrievePosition);
+}
+
+let button = document.querySelector("button");

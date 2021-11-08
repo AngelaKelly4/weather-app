@@ -1,23 +1,38 @@
-.search .emojicitytemp .date .weekday .dailytemp .moreinfo {
-    display: inline;
-    text-align: center;
-    margin: 30px auto;
-  }
-  
-  h3 {
-    text-align: center;
-    display: inline;
-  }
-  
-  #weekday li {
-    display: inline;
-  }
-  
-  .moreinfo {
-    margin: 0 auto;
-    display: block;
-    border: black;
-    color: rgb(23, 23, 212);
-    background: rgb(250, 247, 247);
-  }
+.search .emojicitytemp .date .weekday .dailytemp {
+  display: inline;
+  text-align: center;
+  margin: 30px auto;
+}
+
+h1,
+h2,
+h3 {
+  text-align: center;
+}
+
+.location {
+  display: block;
+  margin: 0 auto;
+}
+
+h4 {
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+}
+
+#weekday li {
+  display: inline;
+  margin: 0 auto;
+  text-align: center;
+  padding: 15px;
+}
+
+.moreinfo {
+  margin: 0 auto;
+  display: block;
+  border: black;
+  color: rgb(23, 23, 212);
+  background: rgb(250, 247, 247);
+}
   
